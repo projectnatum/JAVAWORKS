@@ -2,7 +2,7 @@ package com.natum.registration.model;
 
 import java.sql.Date;
 
-public class CustomerModel {
+public class Customer {
 	
 	private int custId;
 	private String custFirstName;
@@ -65,7 +65,7 @@ public class CustomerModel {
 	
 	@Override
 	public String toString() {
-		return "CustomerModel [custId=" + custId + ", custFirstName=" + custFirstName + ", custLastName=" + custLastName
+		return "Customer [custId=" + custId + ", custFirstName=" + custFirstName + ", custLastName=" + custLastName
 				+ ", custSSN=" + custSSN + ", custEmail=" + custEmail + ", custDOB=" + custDOB + ", custZip=" + custZip
 				+ ", passwords=" + passwords + "]";
 	}

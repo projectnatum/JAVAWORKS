@@ -1,14 +1,15 @@
 package com.natum.registration.service;
 
 import java.util.List;
+
+import com.natum.registration.entity.CustomerDAO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.natum.registration.DAO.RegistrationDAOInterface;
-import com.natum.registration.entity.Customer;
-import com.natum.registration.model.CustomerModel;
+import com.natum.registration.model.Customer;
 
 @Service
 public class RegistrationServiceImp implements RegistrationService {
@@ -19,30 +20,28 @@ public class RegistrationServiceImp implements RegistrationService {
 
 	
 	@Override
-	public List<Customer> getAllCustomers() {
-		// TODO Auto-generated method stub
-		logger.debug("Entry: getAllCustomers() in regService.");
+	public List<CustomerDAO> getAllCustomers() {
 		return registrationDAO.getAllCustomers();
 		
 	}
 
 	@Override
-	public CustomerModel convertEntityToCustomerModel(Customer customer) {
+	public Customer convertEntityToCustomerModel(CustomerDAO customer) {
 		// TODO Auto-generated method stub
 		return registrationDAO.convertEntityToCustomerModel(customer);
 	}
 
 	@Override
 	@Transactional
-	public Customer saveCustomers(Customer customer) {
+	public CustomerDAO saveCustomers(CustomerDAO customerDAO) {
 		// TODO Auto-generated method stub
-		return registrationDAO.saveCustomers(customer);
+		return registrationDAO.saveCustomers(customerDAO);
 	}
 
 	@Override
-	public Customer convertCustomerModelToEntity(CustomerModel customerModel) {
+	public CustomerDAO convertCustomerModelToEntity(Customer customer) {
 		// TODO Auto-generated method stub
-		return registrationDAO.convertCustomerModelToEntity(customerModel);
+		return registrationDAO.convertCustomerModelToEntity(customer);
 	}
 	
 
